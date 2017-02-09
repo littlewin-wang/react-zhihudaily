@@ -1,0 +1,39 @@
+/* Base Application Styles */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: #d3d3d3;
+  transition: all 1s;
+  font-size: 1.4rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#app {
+  min-height: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 2.5em #5d656c;
+  position: relative;
+}
+
+/*Reset style*/
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
