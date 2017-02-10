@@ -5,6 +5,7 @@ require('styles/zhihu.css')
 import React from 'react';
 import Header from './common/header'
 import Slider from './common/slider'
+import Loading from './common/loading'
 
 const data = [
   {images: 'http://pic2.zhimg.com/fe3cc01975fcb64842349a629deb039d.jpg', type: 0, id: 9034429},
@@ -17,8 +18,9 @@ class AppComponent extends React.Component {
   render() {
     return (
       <div className="index">
-        <Header></Header>
+        <Header />
         <Slider images={data} />
+        <Loading mask={true} />
       </div>
     );
   }
