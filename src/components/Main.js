@@ -7,6 +7,7 @@ import Header from './common/header'
 import Slider from './common/slider'
 import More from './common/more'
 import NewsItem from './common/newsItem'
+import Badge from './common/badge'
 
 const dataSlider = [
   {images: 'http://pic2.zhimg.com/fe3cc01975fcb64842349a629deb039d.jpg', type: 0, id: 9034429},
@@ -29,6 +30,7 @@ class AppComponent extends React.Component {
         <Slider images={dataSlider} />
         <More loading={true} />
         <NewsItem item={dataNews}/>
+        <Badge popularity={100} />
       </div>
     );
   }
