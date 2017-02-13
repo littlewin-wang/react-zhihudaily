@@ -4,7 +4,7 @@ require('styles/common/badge.styl')
 export default class Badge extends React.Component {
   render() {
     return (
-      <div className="badge">
+      <div className="badge left">
         <div className="agree">
           <button className="up" title="赞同">
             <i className="icon" />

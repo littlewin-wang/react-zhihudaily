@@ -3,15 +3,15 @@ require('styles/base.css');
 require('styles/zhihu.css')
 
 import React from 'react';
-import NewsList from './newsList'
-import Float from './common/float'
+import NewsContent from './newsContent'
+// import NewsList from './newsList'
+// import Float from './common/float'
 
 class AppComponent extends React.Component {
   render() {
     return (
       <div className="index">
-        <NewsList />
-        <Float />
+        <NewsContent />
       </div>
     );
   }
