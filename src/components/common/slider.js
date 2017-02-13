@@ -6,7 +6,7 @@ import Swiper from 'swiper'
 import { imgProxy } from '../../api/utils'
 
 export default class Slider extends React.Component {
-  componentDidMount () {
+  componentDidUpdate () {
     new Swiper('.swiper-container', {
       direction: 'horizontal',
       loop: true,
@@ -17,14 +17,15 @@ export default class Slider extends React.Component {
       preventClicks: false
     })
   }
+
   render () {
     return (
       <div className="swiper-container">
         <div className="swiper-wrapper">
           {this.props.images.map((item) => (
             <div className="swiper-slide" key={item.id}>
-              <img src={imgProxy(item.images)} />
-              <p></p>
+              <img src={imgProxy(item.image)} />
+              <p>{item.title}</p>
             </div>
           ))}
         </div>
