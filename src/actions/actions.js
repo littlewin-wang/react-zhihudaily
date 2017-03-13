@@ -1,7 +1,6 @@
 /*
  * action 类型
  */
-
 export const ADD_NEWS = 'ADD_NEWS'
 export const GET_NEWS = 'GET_NEWS'
 export const GET_TOPICS = 'GET_TOPICS'
@@ -16,39 +15,14 @@ export const ADD_INDEX = 'ADD_INDEX'
  */
 
 
-
 /*
  * action 创建函数
  */
-
-export function addNews(news) {
-  return { type: ADD_NEWS, news }
-}
-
-export function getNews() {
-  return { type: GET_NEWS }
-}
-
-export function getTopics() {
-  return { type: GET_TOPICS }
-}
-
-export function getSections() {
-  return { type: GET_SECTIONS }
-}
-
-export function getPost(id, func) {
-  return { type: GET_POST, id, func }
-}
-
-export function getTopicPosts(id) {
-  return { type: GET_TOPIC_POSTS, id }
-}
-
-export function getSectionList(id) {
-  return { type: GET_SECTION_LIST, id }
-}
-
-export function addIndex() {
-  return { type: ADD_INDEX }
-}
+export const addNews = news => ({ type: ADD_NEWS, news })
+export const getNews = () => ({ type: GET_NEWS })
+export const getTopics = () => ({type: GET_TOPICS })
+export const getSections = () => ({type: GET_SECTIONS })
+export const getPost = (id, func) => ({type: GET_POST, id, func })
+export const getTopicPosts = (id) => ({ type: GET_TOPIC_POSTS, id })
+export const getSectionList = (id) => ({ type: GET_SECTION_LIST, id })
+export const addIndex = () => ({type: ADD_INDEX })
