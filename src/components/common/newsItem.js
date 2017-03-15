@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 require('styles/common/newsItem.styl')
 
-import { imgProxy } from '../../api/utils'
+import { imgProxy } from '../../helpers/utils'
 
 export default class NewsItem extends React.Component {
   render() {

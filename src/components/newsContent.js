@@ -3,7 +3,7 @@ require('styles/newsContent.styl')
 
 import API from '../api/index'
 import Badge from './common/badge'
-import { imgProxy } from '../api/utils'
+import { imgProxy } from '../helpers/utils'
 
 export default class NewsContent extends React.Component {
   constructor () {

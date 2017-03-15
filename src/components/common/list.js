@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 require('styles/common/list.styl')
 
-import { imgProxy } from '../../api/utils'
+import { imgProxy } from '../../helpers/utils'
 
 export default class List extends React.Component {
   render() {

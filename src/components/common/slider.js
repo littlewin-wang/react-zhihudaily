@@ -3,7 +3,7 @@ require('styles/common/slider.styl')
 
 import 'swiper/dist/css/swiper.min.css'
 import Swiper from 'swiper'
-import { imgProxy } from '../../api/utils'
+import { imgProxy } from '../../helpers/utils'
 
 export default class Slider extends React.Component {
   componentDidUpdate () {

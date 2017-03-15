@@ -1,8 +1,8 @@
 import React from 'react'
 
-import API from '../api/index'
+import API from '../helpers/index'
 import NewsItem from './common/newsItem'
-import { imgProxy } from '../api/utils'
+import { imgProxy } from '../helpers/utils'
 
 export default class TopicList extends React.Component {
   constructor () {
