@@ -20,6 +20,6 @@ export default class Header extends React.Component {
         <span>专栏总览</span>
         <List items={data} />
       </div>
-    );
+    )
   }
 }

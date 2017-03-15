@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes } from 'react'
 
 // import { prevDate } from '../../api/utils'
 import Slider from './common/slider'
@@ -6,6 +6,15 @@ import NewsItem from './common/newsItem'
 import More from './common/more'
 
 export default class NewsList extends React.Component {
+  constructor (props) {
+    super(props)
+    this.addNews = this.addNews.bind(this);
+  }
+
+  addNews () {
+    this.props.actions.GET_HISTORY_NEWS('20170101')
+  }
+
   render () {
     return (
       <div className='newslist'>
@@ -21,12 +30,13 @@ export default class NewsList extends React.Component {
             ))}
           </div>
         ))}
-        <More loading={true} />
+        <More loading={false} addFun={this.addNews}/>
       </div>
     )
   }
 }
 
 NewsList.propTypes = {
-  items: PropTypes.array
+  items: PropTypes.array,
+  actions: PropTypes.object
 }

@@ -24,4 +24,4 @@ export default class NewsItem extends React.Component {
 
 NewsItem.propTypes = {
   item: PropTypes.object
-};
+}

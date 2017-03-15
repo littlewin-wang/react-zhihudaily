@@ -10,10 +10,10 @@ export default class Loading extends React.Component {
           <div className="floating"></div>
         }
       </div>
-    );
+    )
   }
 }
 
 Loading.propTypes = {
   mask: PropTypes.bool
-};
+}

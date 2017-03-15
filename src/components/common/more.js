@@ -10,16 +10,17 @@ export default class More extends React.Component {
     if (isLoading) {
       content = <Loading mask={false}/>
     } else {
-      content = <span class="more-icon">加载更多</span>
+      content = <span className="more-icon" onClick={this.props.addFun}>加载更多</span>
     }
     return (
       <div className={this.props.loading ? 'more isloading' : 'more'}>
         {content}
       </div>
-    );
+    )
   }
 }
 
 More.propTypes = {
-  loading: PropTypes.bool
-};
+  loading: PropTypes.bool,
+  addFun: PropTypes.func
+}

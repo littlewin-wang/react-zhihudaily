@@ -29,6 +29,7 @@ export const GET_HISTORY_NEWS = (date) => {
     API.NewsDateResource(date).then(res => {
       if (res.statusText === 'OK') {
         dispatch(ADD_NEWS(res.data))
+        console.log('done')
       }
     })
   })

@@ -31,10 +31,10 @@ export default class Slider extends React.Component {
         </div>
         <div className="swiper-pagination"></div>
       </div>
-    );
+    )
   }
 }
 
 Slider.propTypes = {
   images: PropTypes.array
-};
+}
