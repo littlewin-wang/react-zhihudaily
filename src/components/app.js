@@ -19,11 +19,11 @@ class AppComponent extends React.Component {
 
   componentDidMount() {
     this.props.actions.GET_LATEST_NEWS()
+    this.props.actions.GET_HISTORY_NEWS('20170101')
   }
 
   render() {
     const items = this.props.items
-    console.log(items)
     return (
       <div className="index">
         <NewsList items={items}/>
