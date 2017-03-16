@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 
-// import { prevDate } from '../../api/utils'
+import { prevDate } from '../helpers/utils'
 import Slider from './common/slider'
 import NewsItem from './common/newsItem'
 import More from './common/more'
