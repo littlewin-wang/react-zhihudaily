@@ -6,6 +6,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as actions from '../actions'
+
+import Header from './common/header'
 // import NewsContent from './newsContent'
 import NewsList from './newsList'
 // import SectionList from './sectionList'
@@ -19,6 +21,7 @@ class AppComponent extends React.Component {
 
   componentDidMount() {
     this.props.actions.GET_LATEST_NEWS()
+    this.props.actions.GET_ALL_TOPICS()
   }
 
   render() {
@@ -26,6 +29,7 @@ class AppComponent extends React.Component {
     const actions = this.props.actions
     return (
       <div className="index">
+        <Header data={this.props.topics}/>
         <NewsList items={items} actions={actions}/>
       </div>
     );
@@ -34,7 +38,8 @@ class AppComponent extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    items: state.news
+    items: state.news,
+    topics: state.topics
   }
 }
 

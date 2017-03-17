@@ -16,4 +16,14 @@ const news = (state = [], action) => {
   }
 }
 
-export { news }
+const topics = (state = [], action) => {
+  switch (action.type) {
+    case 'GET_TOPICS':
+      return action.topics.data
+
+    default:
+      return state
+  }
+}
+
+export { news, topics }
