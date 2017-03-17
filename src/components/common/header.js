@@ -19,5 +19,5 @@ export default class Header extends React.Component {
 }
 
 Header.propTypes = {
-  data: PropTypes.array,
+  data: PropTypes.array
 }

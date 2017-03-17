@@ -21,6 +21,7 @@ class AppComponent extends React.Component {
 
   componentDidMount() {
     this.props.actions.GET_LATEST_NEWS()
+    this.props.actions.GET_ALL_SECTIONS()
     this.props.actions.GET_ALL_TOPICS()
   }
 
@@ -39,7 +40,8 @@ class AppComponent extends React.Component {
 const mapStateToProps = (state) => {
   return {
     items: state.news,
-    topics: state.topics
+    topics: state.topics,
+    sections: state.sections
   }
 }
 

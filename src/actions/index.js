@@ -21,6 +21,13 @@ export const GET_TOPICS = (topics) => {
   }
 }
 
+export const GET_SECTIONS = (sections) => {
+  return {
+    type: 'GET_SECTIONS',
+    sections
+  }
+}
+
 export const GET_LATEST_NEWS = () => {
   return (dispatch => {
     API.NewsResource().then(res => {
@@ -43,9 +50,20 @@ export const GET_HISTORY_NEWS = (date) => {
 
 export const GET_ALL_TOPICS = () => {
   return (dispatch => {
+    API.TopicsResource().then(res => {
+      if (res.statusText === 'OK') {
+        console.log(res.data)
+        dispatch(GET_TOPICS(res.data))
+      }
+    })
+  })
+}
+
+export const GET_ALL_SECTIONS = () => {
+  return (dispatch => {
     API.SectionsResource().then(res => {
       if (res.statusText === 'OK') {
-        dispatch(GET_TOPICS(res.data))
+        dispatch(GET_SECTIONS(res.data))
       }
     })
   })
