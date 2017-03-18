@@ -23,6 +23,7 @@ class AppComponent extends React.Component {
     this.props.actions.GET_LATEST_NEWS()
     this.props.actions.GET_ALL_SECTIONS()
     this.props.actions.GET_ALL_TOPICS()
+    this.props.actions.GET_TOPIC_ID_POSTS(13)
   }
 
   render() {
@@ -41,7 +42,8 @@ const mapStateToProps = (state) => {
   return {
     items: state.news,
     topics: state.topics,
-    sections: state.sections
+    sections: state.sections,
+    topicPosts: state.topicPosts
   }
 }
 

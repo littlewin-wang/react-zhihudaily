@@ -28,6 +28,13 @@ export const GET_SECTIONS = (sections) => {
   }
 }
 
+export const GET_TOPIC_POSTS = (topicPosts) => {
+  return {
+    type: 'GET_TOPIC_POSTS',
+    topicPosts
+  }
+}
+
 export const GET_LATEST_NEWS = () => {
   return (dispatch => {
     API.NewsResource().then(res => {
@@ -64,6 +71,17 @@ export const GET_ALL_SECTIONS = () => {
     API.SectionsResource().then(res => {
       if (res.statusText === 'OK') {
         dispatch(GET_SECTIONS(res.data))
+      }
+    })
+  })
+}
+
+export const GET_TOPIC_ID_POSTS = (id) => {
+  return (dispatch => {
+    API.TopicIdResource(id).then(res => {
+      if (res.statusText === 'OK') {
+        console.log(res.data)
+        dispatch(GET_TOPIC_POSTS(res.data))
       }
     })
   })
