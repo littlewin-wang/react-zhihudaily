@@ -24,6 +24,7 @@ class AppComponent extends React.Component {
     this.props.actions.GET_ALL_SECTIONS()
     this.props.actions.GET_ALL_TOPICS()
     this.props.actions.GET_TOPIC_ID_POSTS(13)
+    this.props.actions.GET_SECTION_ID_POSTS(1)
   }
 
   render() {
@@ -43,7 +44,8 @@ const mapStateToProps = (state) => {
     items: state.news,
     topics: state.topics,
     sections: state.sections,
-    topicPosts: state.topicPosts
+    topicPosts: state.topicPosts,
+    sectionPosts: state.sectionPosts
   }
 }
 

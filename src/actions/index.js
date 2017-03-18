@@ -35,6 +35,13 @@ export const GET_TOPIC_POSTS = (topicPosts) => {
   }
 }
 
+export const GET_SECTION_POSTS = (sectionPosts) => {
+  return {
+    type: 'GET_SECTION_POSTS',
+    sectionPosts
+  }
+}
+
 export const GET_LATEST_NEWS = () => {
   return (dispatch => {
     API.NewsResource().then(res => {
@@ -80,8 +87,18 @@ export const GET_TOPIC_ID_POSTS = (id) => {
   return (dispatch => {
     API.TopicIdResource(id).then(res => {
       if (res.statusText === 'OK') {
-        console.log(res.data)
         dispatch(GET_TOPIC_POSTS(res.data))
+      }
+    })
+  })
+}
+
+export const GET_SECTION_ID_POSTS = (id) => {
+  return (dispatch => {
+    API.SectionIdResource(id).then(res => {
+      if (res.statusText === 'OK') {
+        console.log(res.data)
+        dispatch(GET_SECTION_POSTS(res.data))
       }
     })
   })
