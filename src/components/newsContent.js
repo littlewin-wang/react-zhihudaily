@@ -1,7 +1,7 @@
 import React from 'react'
 require('styles/newsContent.styl')
 
-import API from '../api/index'
+import API from '../helpers/api'
 import Badge from './common/badge'
 import { imgProxy } from '../helpers/utils'
 

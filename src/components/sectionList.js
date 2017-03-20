@@ -1,6 +1,6 @@
 import React from 'react'
 
-import API from '../helpers/index'
+import API from '../helpers/api'
 import NewsItem from './common/newsItem'
 
 export default class SectionList extends React.Component {

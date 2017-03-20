@@ -1,6 +1,6 @@
 import React from 'react'
 
-import API from '../helpers/index'
+import API from '../helpers/api'
 import NewsItem from './common/newsItem'
 import { imgProxy } from '../helpers/utils'
 
