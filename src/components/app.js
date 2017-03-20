@@ -3,22 +3,48 @@ require('styles/base.css')
 require('styles/zhihu.css')
 
 import React from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as actions from '../actions'
 
 import Header from './common/header'
 
-import route from '../route'
-
-export default class AppComponent extends React.Component {
+class AppComponent extends React.Component {
   constructor(props, context) {
     super(props, context)
+  }
+
+  componentDidMount() {
+    this.props.actions.GET_LATEST_NEWS()
+    this.props.actions.GET_ALL_TOPICS()
+    this.props.actions.GET_ALL_SECTIONS()
   }
 
   render() {
     return (
       <div className="index">
-        <Header data={[]}/>
-        { route }
+        <Header topics={this.props.topics} sections={this.props.sections} />
+        { this.props.children }
       </div>
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    items: state.news,
+    topics: state.topics,
+    sections: state.sections
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    actions: bindActionCreators(actions, dispatch)
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AppComponent)

@@ -4,13 +4,12 @@ import ReactDOM from 'react-dom'
 
 import { Provider } from 'react-redux'
 import store from './store'
-
-import App from './components/app'
+import route from './route'
 
 // Render the main component into the dom
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    { route }
   </Provider>,
   document.getElementById('app')
 )

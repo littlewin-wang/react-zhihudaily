@@ -66,7 +66,6 @@ export const GET_ALL_TOPICS = () => {
   return (dispatch => {
     API.TopicsResource().then(res => {
       if (res.statusText === 'OK') {
-        console.log(res.data)
         dispatch(GET_TOPICS(res.data))
       }
     })
