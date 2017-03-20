@@ -6,7 +6,7 @@ import Swiper from 'swiper'
 import { imgProxy } from '../../helpers/utils'
 
 export default class Slider extends React.Component {
-  componentDidUpdate () {
+  componentDidMount () {
     new Swiper('.swiper-container', {
       direction: 'horizontal',
       loop: true,
