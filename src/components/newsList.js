@@ -1,9 +1,8 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as actions from '../actions'
 
-// import { prevDate } from '../helpers/utils'
 import Slider from './common/slider'
 import NewsItem from './common/newsItem'
 import More from './common/more'
@@ -19,7 +18,8 @@ class NewsList extends React.Component {
   }
 
   addNews () {
-    this.props.actions.GET_HISTORY_NEWS('20170101')
+    let date = this.props.items[this.props.items.length-1].date
+    this.props.actions.GET_HISTORY_NEWS(date)
   }
 
   render () {
@@ -41,11 +41,6 @@ class NewsList extends React.Component {
       </div>
     )
   }
-}
-
-NewsList.propTypes = {
-  items: PropTypes.array,
-  actions: PropTypes.object
 }
 
 const mapStateToProps = (state) => {

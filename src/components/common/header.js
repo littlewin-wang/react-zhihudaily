@@ -5,7 +5,7 @@ require('styles/common/header.styl')
 import List from './list'
 
 export default class Header extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       type: '',
@@ -14,7 +14,7 @@ export default class Header extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(type) {
+  handleClick (type) {
     let toggle = (this.state.type === type ? '' : type)
     let data = toggle ? this.props[toggle] : []
     this.setState({
@@ -23,7 +23,14 @@ export default class Header extends React.Component {
     })
   }
 
-  render() {
+  closeList () {
+    this.setState({
+      type: '',
+      data: []
+    })
+  }
+
+  render () {
     return (
       <div className="head">
         <div className="logo">
@@ -32,7 +39,7 @@ export default class Header extends React.Component {
         <span onClick={() => { this.handleClick('topic')}}>主题日报</span>
         <span onClick={() => { this.handleClick('section')}}>专栏总览</span>
         {this.state.type &&
-          <List type={this.state.type} items={this.state.data} />
+          <List type={this.state.type} items={this.state.data} closeList={() => { this.closeList()}} />
         }
       </div>
     )
