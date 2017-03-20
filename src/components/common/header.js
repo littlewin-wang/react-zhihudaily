@@ -29,10 +29,10 @@ export default class Header extends React.Component {
         <div className="logo">
           <Link className="link-logo" to="/">知乎日报</Link>
         </div>
-        <span onClick={() => { this.handleClick('topics')}}>主题日报</span>
-        <span onClick={() => { this.handleClick('sections')}}>专栏总览</span>
+        <span onClick={() => { this.handleClick('topic')}}>主题日报</span>
+        <span onClick={() => { this.handleClick('section')}}>专栏总览</span>
         {this.state.type &&
-          <List items={this.state.data} />
+          <List type={this.state.type} items={this.state.data} />
         }
       </div>
     )
@@ -40,6 +40,6 @@ export default class Header extends React.Component {
 }
 
 Header.propTypes = {
-  topics: PropTypes.array,
-  sections: PropTypes.array
+  topic: PropTypes.array,
+  section: PropTypes.array
 }

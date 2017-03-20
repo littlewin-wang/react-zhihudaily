@@ -96,7 +96,6 @@ export const GET_SECTION_ID_POSTS = (id) => {
   return (dispatch => {
     API.SectionIdResource(id).then(res => {
       if (res.statusText === 'OK') {
-        console.log(res.data)
         dispatch(GET_SECTION_POSTS(res.data))
       }
     })

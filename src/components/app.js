@@ -23,7 +23,7 @@ class AppComponent extends React.Component {
   render() {
     return (
       <div className="index">
-        <Header topics={this.props.topics} sections={this.props.sections} />
+        <Header topic={this.props.topics} section={this.props.sections} />
         { this.props.children }
       </div>
     )
