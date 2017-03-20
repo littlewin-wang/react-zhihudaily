@@ -14,6 +14,13 @@ export const ADD_NEWS = (news) => {
   }
 }
 
+export const GET_POST = (post) => {
+  return {
+    type: 'GET_POST',
+    post
+  }
+}
+
 export const GET_TOPICS = (topics) => {
   return {
     type: 'GET_TOPICS',
@@ -57,6 +64,16 @@ export const GET_HISTORY_NEWS = (date) => {
     API.NewsDateResource(date).then(res => {
       if (res.statusText === 'OK') {
         dispatch(ADD_NEWS(res.data))
+      }
+    })
+  })
+}
+
+export const GET_ID_POST = (id) => {
+  return (dispatch => {
+    API.NewsIdResource(id).then(res => {
+      if (res.statusText === 'OK') {
+        dispatch(GET_POST(res.data))
       }
     })
   })

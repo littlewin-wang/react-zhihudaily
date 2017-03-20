@@ -16,6 +16,16 @@ const news = (state = [], action) => {
   }
 }
 
+const post = (state = {}, action) => {
+  switch (action.type) {
+    case 'GET_POST':
+      return action.post
+
+    default:
+      return state
+  }
+}
+
 const topics = (state = [], action) => {
   switch (action.type) {
     case 'GET_TOPICS':
@@ -56,4 +66,4 @@ const sectionPosts = (state = {}, action) => {
   }
 }
 
-export { news, topics, sections, topicPosts, sectionPosts }
+export { news, post, topics, sections, topicPosts, sectionPosts }
