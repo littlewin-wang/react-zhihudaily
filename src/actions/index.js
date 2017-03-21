@@ -21,6 +21,13 @@ export const GET_POST = (post) => {
   }
 }
 
+export const GET_POST_COMMENT = (comments) => {
+  return {
+    type: 'GET_POST_COMMENT',
+    comments
+  }
+}
+
 export const GET_TOPICS = (topics) => {
   return {
     type: 'GET_TOPICS',
@@ -89,6 +96,24 @@ export const GET_ID_POST = (id) => {
         }
 
         dispatch(GET_POST(post))
+      }
+    })
+  })
+}
+
+export const GET_ID_POST_COMMENT = (id) => {
+  let comments
+
+  return (dispatch => {
+    API.LongCommentsResource(id).then(res => {
+      if (res.statusText === 'OK') {
+        comments = res.data.comments
+      }
+      return API.ShortCommentsResource(id)
+    }).then(res2 => {
+      if (res2.statusText === 'OK') {
+        comments = comments.concat(res2.data.comments)
+        dispatch(GET_POST_COMMENT(comments))
       }
     })
   })

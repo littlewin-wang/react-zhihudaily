@@ -8,6 +8,7 @@ import { bindActionCreators } from 'redux'
 import * as actions from '../actions'
 
 import Header from './common/header'
+import Loading from './common/loading'
 import Float from './common/float'
 
 class AppComponent extends React.Component {
