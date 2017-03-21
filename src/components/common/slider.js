@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react'
+import { Link } from 'react-router'
 require('styles/common/slider.styl')
 
 import 'swiper/dist/css/swiper.min.css'
@@ -24,8 +25,10 @@ export default class Slider extends React.Component {
         <div className="swiper-wrapper">
           {this.props.images.map((item) => (
             <div className="swiper-slide" key={item.id}>
-              <img src={imgProxy(item.image)} />
-              <p>{item.title}</p>
+              <Link to={'/news/' + item.id}>
+                <img src={imgProxy(item.image)} />
+                <p>{item.title}</p>
+              </Link>
             </div>
           ))}
         </div>

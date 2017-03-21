@@ -9,9 +9,8 @@ import Badge from './common/badge'
 import { imgProxy } from '../helpers/utils'
 
 class NewsContent extends React.Component {
-  constructor () {
-    super()
-    this.state = {post: {'image': '', body: '', popularity: 0}}
+  constructor (props, context) {
+    super(props, context)
   }
 
   componentDidMount () {
@@ -31,7 +30,7 @@ class NewsContent extends React.Component {
       <div className='newscontent'>
         <div className='post'>
           <img className="postimage" src={imgProxy(data.image)} />
-          <div dangerouslySetInnerHTML={{__html: data.body}}></div>
+          <div dangerouslySetInnerHTML={{__html: imgProxy(data.body)}}></div>
         </div>
         {data.body &&
           <Badge popularity={data.popularity} />
