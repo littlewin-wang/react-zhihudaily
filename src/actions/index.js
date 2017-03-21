@@ -70,10 +70,25 @@ export const GET_HISTORY_NEWS = (date) => {
 }
 
 export const GET_ID_POST = (id) => {
+  let post
+
   return (dispatch => {
     API.NewsIdResource(id).then(res => {
       if (res.statusText === 'OK') {
-        dispatch(GET_POST(res.data))
+        post = res.data
+      }
+      return API.NewsInfoResource(id)
+    }).then(res2 => {
+      if (res2.statusText === 'OK') {
+        let info = res2.data
+        // 将post info属性赋值给post
+        for (let item in info) {
+          if ({}.hasOwnProperty.call(info, item)) {
+            post[item] = info[item]
+          }
+        }
+
+        dispatch(GET_POST(post))
       }
     })
   })
