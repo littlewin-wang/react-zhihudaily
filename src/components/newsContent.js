@@ -46,6 +46,7 @@ class NewsContent extends React.Component {
           <img className="postimage" src={imgProxy(data.image)} ref="lazyLoad"/>
           <div dangerouslySetInnerHTML={{__html: imgProxy(data.body)}}></div>
         </div>
+        <span className="imgFrom">图片库: { data.image_source }</span>
         {data.body &&
           <Badge popularity={data.popularity} />
         }

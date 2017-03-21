@@ -1,6 +1,6 @@
 require('normalize.css/normalize.css')
-require('styles/base.css')
 require('styles/zhihu.css')
+require('styles/base.css')
 
 import React from 'react'
 import { connect } from 'react-redux'
@@ -8,6 +8,7 @@ import { bindActionCreators } from 'redux'
 import * as actions from '../actions'
 
 import Header from './common/header'
+import Float from './common/float'
 
 class AppComponent extends React.Component {
   constructor(props, context) {
@@ -25,6 +26,7 @@ class AppComponent extends React.Component {
       <div className="index">
         <Header topic={this.props.topics} section={this.props.sections} />
         { this.props.children }
+        <Float isHome={this.props.location.pathname === '/'}/>
       </div>
     )
   }
