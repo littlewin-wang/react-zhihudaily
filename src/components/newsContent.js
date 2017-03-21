@@ -14,6 +14,7 @@ class NewsContent extends React.Component {
   }
 
   componentDidMount () {
+    this.refs.lazyLoad.style.display = 'none'
     this.props.actions.GET_ID_POST(this.props.routeParams.id)
   }
 
@@ -23,13 +24,26 @@ class NewsContent extends React.Component {
     }
   }
 
+  componentDidUpdate () {
+    this.check = setInterval(() => {
+      if (this.refs.lazyLoad.complete) {
+        this.refs.lazyLoad.style.display = ''
+        clearInterval(this.check)
+      }
+    }, 500)
+  }
+
+  componentWillUnmount () {
+    clearInterval(this.check)
+  }
+
   render () {
     let data = this.props.post || {'image': '', body: '', popularity: 0}
 
     return (
       <div className='newscontent'>
         <div className='post'>
-          <img className="postimage" src={imgProxy(data.image)} />
+          <img className="postimage" src={imgProxy(data.image)} ref="lazyLoad"/>
           <div dangerouslySetInnerHTML={{__html: imgProxy(data.body)}}></div>
         </div>
         {data.body &&
