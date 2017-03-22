@@ -1,8 +1,6 @@
-# [知乎日报](http://littlewin-vue-zhihudaily.daoapp.io)
+# 知乎日报
 
 > 基于React和Node.js的Web单页应用
-
-> Web容器支持: [docker](https://www.docker.com/) + [Daocloud](https://www.daocloud.io/) 
 
 ## 技术栈
 - [React](https://facebook.github.io/react/) + [react-router 2.0](https://github.com/ReactTraining/react-router) + [redux](https://github.com/reactjs/redux) + [axios](https://github.com/mzabriskie/axios)
@@ -25,9 +23,6 @@ npm install
 
 # serve with hot reload at localhost:8000
 npm run start
-
-# build for production with minification
-npm run build
 ```
 
 ## TODO
