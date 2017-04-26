@@ -11,6 +11,9 @@ RUN npm install
 # Bundle app source
 COPY . /usr/src/app
 
+# To build the dist file
+RUN npm run dist
+
 EXPOSE 80
 
-CMD ["node", "server.js", "--env=dist"]
+CMD ["node", "prod.server.js", "--env=dist"]
