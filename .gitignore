@@ -5,6 +5,9 @@ logs
 # Mac
 .DS_Store
 
+# Dist file
+dist
+
 # Runtime data
 pids
 *.pid
